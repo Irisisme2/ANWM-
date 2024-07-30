@@ -22,10 +22,9 @@
 
 // Chakra imports
 import { Box, SimpleGrid } from "@chakra-ui/react";
-import DevelopmentTable from "views/admin/WalletManagement/components/DevelopmentTable";
-import CheckTable from "views/admin/WalletManagement/components/CheckTable";
-import ColumnsTable from "views/admin/WalletManagement/components/ColumnsTable";
-import ComplexTable from "views/admin/WalletManagement/components/ComplexTable";
+import ViewWallet from "views/admin/WalletManagement/components/ViewWallet";
+import WalletOverview from "views/admin/WalletManagement/components/WalletOverview";
+import Management from "views/admin/WalletManagement/components/Management";
 import {
   columnsDataDevelopment,
   columnsDataCheck,
@@ -33,7 +32,7 @@ import {
   columnsDataComplex,
 } from "views/admin/WalletManagement/variables/columnsData";
 import tableDataDevelopment from "views/admin/WalletManagement/variables/tableDataDevelopment.json";
-import tableDataCheck from "views/admin/WalletManagement/variables/tableDataCheck.json";
+import AddRemoveWallets from "views/admin/WalletManagement/components/AddRemoveWallets";
 import tableDataColumns from "views/admin/WalletManagement/variables/tableDataColumns.json";
 import tableDataComplex from "views/admin/WalletManagement/variables/tableDataComplex.json";
 import React from "react";
@@ -43,23 +42,27 @@ export default function Settings() {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       <SimpleGrid
-        mb='20px'
-        columns={{ sm: 1, md: 2 }}
-        spacing={{ base: "20px", xl: "20px" }}>
-        <DevelopmentTable
-          columnsData={columnsDataDevelopment}
-          tableData={tableDataDevelopment}
-        />
-        <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <ColumnsTable
-          columnsData={columnsDataColumns}
-          tableData={tableDataColumns}
-        />
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
+        columns={{ base: 1, md: 2 }}
+        spacing={{ base: "20px", xl: "20px" }}
+        mb='10px'
+        minHeight="calc(1vh - 10px)" // Adjust to your needs
+      >
+        {/* Left column with vertical stack */}
+        <SimpleGrid
+          columns={1}
+          spacing={{ base: "20px", xl: "20px" }}
+          minHeight="10%"
+        >
+          <ViewWallet />
+          <Management />
+          <AddRemoveWallets/>
+        </SimpleGrid>
+
+        {/* Right column taking full height */}
+        <Box>
+          <WalletOverview />
+        </Box>
       </SimpleGrid>
     </Box>
   );
-}
+};

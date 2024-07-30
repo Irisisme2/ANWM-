@@ -16,6 +16,10 @@ Acki Nacki Wallet Manager (ANWM) is a cutting-edge web application designed to e
 
 ### Wallet Connect Integration 🌉
 
+![wallet1.png](https://cdn.dorahacks.io/static/files/191052cf36cfc3ea469751542c4a5f9a.png)
+
+![walelt2.png](https://cdn.dorahacks.io/static/files/191052d1467876740d755844d9ea49e6.png)
+
 - **DAPP Integration:** Facilitates easy connection of wallets to various DAPPs using Wallet Connect functionality. 🌉 Streamlines the process of connecting with DAPPs for a seamless user experience. 🤝
 
 ### Advanced Transaction Visualization 📊🔍

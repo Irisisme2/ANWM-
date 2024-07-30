@@ -1,6 +1,5 @@
 {
-  "homepage": "https://horizon-ui.com/horizon-ui-chakra",
-  "name": "horizon-ui-chakra",
+  "name": "ANWM",
   "version": "1.0.1",
   "private": true,
   "dependencies": {
@@ -11,11 +10,13 @@
     "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@hookform/resolvers": "^3.9.0",
     "@hypertheme-editor/chakra-ui": "^0.1.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "apexcharts": "3.35.2",
+    "axios": "^1.7.2",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -27,6 +28,7 @@
     "react-custom-scrollbars-2": "^4.2.1",
     "react-dom": "^18.3.1",
     "react-dropzone": "^12.0.4",
+    "react-hook-form": "^7.52.1",
     "react-icons": "^4.3.1",
     "react-is": "^18.0.0",
     "react-router-dom": "^5.3.0",
@@ -35,7 +37,8 @@
     "recharts": "^2.12.7",
     "stylis": "^4.1.1",
     "stylis-plugin-rtl": "2.0.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
