@@ -1,0 +1,26 @@
+[
+  {
+    "transactionId": "1",
+    "amount": "$150.00",
+    "date": "2024-07-01",
+    "status": "Completed"
+  },
+  {
+    "transactionId": "2",
+    "amount": "$200.00",
+    "date": "2024-07-02",
+    "status": "Pending"
+  },
+  {
+    "transactionId": "3",
+    "amount": "$75.50",
+    "date": "2024-07-03",
+    "status": "Failed"
+  },
+  {
+    "transactionId": "4",
+    "amount": "$300.00",
+    "date": "2024-07-04",
+    "status": "Completed"
+  }
+]
