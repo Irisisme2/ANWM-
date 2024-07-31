@@ -74,7 +74,11 @@ Acki Nacki Wallet Manager (ANWM) is a cutting-edge web application designed to e
 
 - **DeFi Management:** Integrates with DeFi applications for managing loans, staking, and yield farming. 🌾💰
 
+![defi.png](https://cdn.dorahacks.io/static/files/191093761e191d65d66d5f940a2941dc.png)
+
 - **DAO Voting:** Facilitates participation in DAO votes and management of proposals and decisions. 🗳️🏛️
+
+![dai.png](https://cdn.dorahacks.io/static/files/191093781955759f8b495284c368acdc.png)
 
 ### AI Assistant 🤖💬
 
