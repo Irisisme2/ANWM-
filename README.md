@@ -62,6 +62,10 @@ Acki Nacki Wallet Manager (ANWM) is a cutting-edge web application designed to e
 
 ### NFT and Token Management 🎨🖼️
 
+![enefti.png](https://cdn.dorahacks.io/static/files/19108dc2d7233e87d2470cb43c2ad15d.png)
+
+![enegri1.png](https://cdn.dorahacks.io/static/files/19108dcbc9cb3b03df855794126b5642.png)
+
 - **NFT Management:** Enables management and storage of NFT tokens, including viewing, transferring, and listing them for sale. 🎨🖼️
 
 - **NFT Creation:** Allows users to mint their own NFTs directly from the application. 🛠️🎨

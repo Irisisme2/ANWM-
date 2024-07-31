@@ -1,28 +1,4 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2023 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-import React from "react";
-
-// Chakra imports
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -33,15 +9,14 @@ import {
   useColorModeValue,
   SimpleGrid,
 } from "@chakra-ui/react";
-
-// Custom components
 import Banner from "views/admin/marketplace/components/Banner";
 import TableTopCreators from "views/admin/marketplace/components/TableTopCreators";
 import HistoryItem from "views/admin/marketplace/components/HistoryItem";
 import NFT from "components/card/NFT";
-import Card from "components/card/Card.js";
+import Card from "components/card/Card";
+import MintNFT from "views/admin/marketplace/components/mintnft";
+import NFTCollectionGrid from "views/admin/marketplace/components/NFTCollectionGrid";
 
-// Assets
 import Nft1 from "assets/img/nfts/Nft1.png";
 import Nft2 from "assets/img/nfts/Nft2.png";
 import Nft3 from "assets/img/nfts/Nft3.png";
@@ -56,9 +31,42 @@ import tableDataTopCreators from "views/admin/marketplace/variables/tableDataTop
 import { tableColumnsTopCreators } from "views/admin/marketplace/variables/tableColumnsTopCreators";
 
 export default function Marketplace() {
-  // Chakra Color Mode
+  const [nfts, setNfts] = useState([
+    {
+      name: 'Abstract Colors',
+      author: 'By Esthera Jackson',
+      image: Nft1,
+      currentbid: '0.91 ETH',
+    },
+    {
+      name: 'ETH AI Brain',
+      author: 'By Nick Wilson',
+      image: Nft2,
+      currentbid: '0.91 ETH',
+    },
+    {
+      name: 'Mesh Gradients ',
+      author: 'By Will Smith',
+      image: Nft3,
+      currentbid: '0.91 ETH',
+    },
+  ]);
+
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorBrand = useColorModeValue("brand.500", "white");
+
+  const handleMint = (newNft) => {
+    setNfts((prevNfts) => [
+      ...prevNfts,
+      {
+        name: newNft.name,
+        author: 'By You', // Możesz dodać faktycznego autora lub pozostawić 'By You'
+        image: newNft.image,
+        currentbid: `${newNft.price} ETH`,
+      },
+    ]);
+  };
+
   return (
     <Box pt={{ base: "180px", md: "80px", xl: "80px" }}>
       {/* Main Fields */}
@@ -67,6 +75,9 @@ export default function Marketplace() {
         gridTemplateColumns={{ xl: "repeat(3, 1fr)", "2xl": "1fr 0.46fr" }}
         gap={{ base: "20px", xl: "20px" }}
         display={{ base: "block", xl: "grid" }}>
+        <NFTCollectionGrid />
+        <MintNFT onMint={handleMint} />
+
         <Flex
           flexDirection='column'
           gridArea={{ xl: "1 / 1 / 2 / 3", "2xl": "1 / 1 / 2 / 2" }}>
@@ -113,57 +124,26 @@ export default function Marketplace() {
               </Flex>
             </Flex>
             <SimpleGrid columns={{ base: 1, md: 3 }} gap='20px'>
-              <NFT
-                name='Abstract Colors'
-                author='By Esthera Jackson'
-                bidders={[
-                  Avatar1,
-                  Avatar2,
-                  Avatar3,
-                  Avatar4,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                ]}
-                image={Nft1}
-                currentbid='0.91 ETH'
-                download='#'
-              />
-              <NFT
-                name='ETH AI Brain'
-                author='By Nick Wilson'
-                bidders={[
-                  Avatar1,
-                  Avatar2,
-                  Avatar3,
-                  Avatar4,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                ]}
-                image={Nft2}
-                currentbid='0.91 ETH'
-                download='#'
-              />
-              <NFT
-                name='Mesh Gradients '
-                author='By Will Smith'
-                bidders={[
-                  Avatar1,
-                  Avatar2,
-                  Avatar3,
-                  Avatar4,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                  Avatar1,
-                ]}
-                image={Nft3}
-                currentbid='0.91 ETH'
-                download='#'
-              />
+              {nfts.map((nft, index) => (
+                <NFT
+                  key={index}
+                  name={nft.name}
+                  author={nft.author}
+                  bidders={[
+                    Avatar1,
+                    Avatar2,
+                    Avatar3,
+                    Avatar4,
+                    Avatar1,
+                    Avatar1,
+                    Avatar1,
+                    Avatar1,
+                  ]}
+                  image={nft.image}
+                  currentbid={nft.currentbid}
+                  download='#'
+                />
+              ))}
             </SimpleGrid>
             <Text
               mt='45px'
@@ -178,6 +158,7 @@ export default function Marketplace() {
               columns={{ base: 1, md: 3 }}
               gap='20px'
               mb={{ base: "20px", xl: "0px" }}>
+              {/* List of recently added NFTs (this can be dynamic as well) */}
               <NFT
                 name='Swipe Circles'
                 author='By Peter Will'
