@@ -28,6 +28,8 @@ Acki Nacki Wallet Manager (ANWM) is a cutting-edge web application designed to e
 
 - **Detailed Transaction Views:** Features to expand and view detailed information about transactions and their messages. 📜🔎
 
+![transactions.png](https://cdn.dorahacks.io/static/files/19108966bc43c35e68dd08042ffb2688.png)
+
 ### Hardware Wallet Integration 🛡️💻
 
 - **Support for Popular Hardware Wallets:** Integrates with popular hardware wallets, allowing users to manage their assets with an added layer of security. 🛡️💻
@@ -51,6 +53,8 @@ Acki Nacki Wallet Manager (ANWM) is a cutting-edge web application designed to e
 - **Browser Extensions:** Develops browser extensions (e.g., Chrome, Firefox) for quick access to the wallet, automatic form filling for transactions, and DAPP integration. 🌐🔌
 
 ### Network and Performance Analysis 🌍📈
+
+![netowrk.png](https://cdn.dorahacks.io/static/files/19108c0def7430e89e1131b455781523.png)
 
 - **Network Map:** Visualizes Acki Nacki network activity, including node connections, transaction flow, and network performance. 🌍📈
 

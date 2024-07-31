@@ -24,11 +24,11 @@
 import { Box, Grid } from "@chakra-ui/react";
 
 // Custom components
-import Banner from "views/admin/TransactionManagement/components/Banner";
-import General from "views/admin/TransactionManagement/components/General";
-import Notifications from "views/admin/TransactionManagement/components/Notifications";
-import Projects from "views/admin/TransactionManagement/components/Projects";
-import Storage from "views/admin/TransactionManagement/components/Storage";
+import SendFunds from "views/admin/TransactionManagement/components/SendFunds";
+import ReceiveHistoryTable from "views/admin/TransactionManagement/components/ReceiveHistoryTable";
+import TransactionHistory from "views/admin/TransactionManagement/components/TransactionHistory";
+import SendHistoryTable from "views/admin/TransactionManagement/components/SendHistoryTable";
+import ReceiveFunds from "views/admin/TransactionManagement/components/ReceiveFunds";
 import Upload from "views/admin/TransactionManagement/components/Upload";
 
 // Assets
@@ -43,75 +43,29 @@ export default function Overview() {
       <Grid
         templateColumns={{
           base: "1fr",
-          lg: "1.34fr 1fr 1.62fr",
+          lg: "1fr 1fr", // Split into two equal columns on large screens
         }}
         templateRows={{
-          base: "repeat(3, 1fr)",
+          base: "repeat(2, 1fr)",
           lg: "1fr",
         }}
-        gap={{ base: "20px", xl: "20px" }}>
-        <Banner
-          gridArea='1 / 1 / 2 / 2'
-          banner={banner}
-          avatar={avatar}
-          name='Adela Parkson'
-          job='Product Designer'
-          posts='17'
-          followers='9.7k'
-          following='274'
+        gap={{ base: "44px", xl: "20px" }}
+        mb={{ base: "44px", xl: "40px" }} // Added margin-bottom
+      >
+        <SendFunds
+          gridArea={{ base: "1 / 1 / 2 / 2", lg: "1 / 1 / 2 / 2" }} // Adjusted gridArea for small and large screens
         />
-        <Storage
-          gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={25.6}
-          total={50}
-        />
-        <Upload
-          gridArea={{
-            base: "3 / 1 / 4 / 2",
-            lg: "1 / 3 / 2 / 4",
-          }}
-          minH={{ base: "auto", lg: "420px", "2xl": "365px" }}
-          pe='20px'
-          pb={{ base: "100px", lg: "20px" }}
+        <ReceiveFunds
+          gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }} // Adjusted gridArea for small and large screens
         />
       </Grid>
       <Grid
-        mb='20px'
-        templateColumns={{
-          base: "1fr",
-          lg: "repeat(2, 1fr)",
-          "2xl": "1.34fr 1.62fr 1fr",
-        }}
-        templateRows={{
-          base: "1fr",
-          lg: "repeat(2, 1fr)",
-          "2xl": "1fr",
-        }}
-        gap={{ base: "20px", xl: "20px" }}>
-        <Projects
-          gridArea='1 / 2 / 2 / 2'
-          banner={banner}
-          avatar={avatar}
-          name='Adela Parkson'
-          job='Product Designer'
-          posts='17'
-          followers='9.7k'
-          following='274'
-        />
-        <General
-          gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          minH='365px'
-          pe='20px'
-        />
-        <Notifications
-          used={25.6}
-          total={50}
-          gridArea={{
-            base: "3 / 1 / 4 / 2",
-            lg: "2 / 1 / 3 / 3",
-            "2xl": "1 / 3 / 2 / 4",
-          }}
-        />
+        gap={{ base: "20px", xl: "20px" }}
+        mt={{ base: "20px", xl: "40px" }} // Added margin-top
+      >
+        <SendHistoryTable />
+        <ReceiveHistoryTable />
+        <TransactionHistory />
       </Grid>
     </Box>
   );
